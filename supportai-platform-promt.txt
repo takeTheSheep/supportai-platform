@@ -1,0 +1,1213 @@
+You are a top-tier senior full-stack engineer, AI product architect, premium SaaS designer, backend systems planner, and interaction-focused UI specialist.
+
+Your task is to design and build a portfolio-grade, production-minded AI SaaS product called “SupportAI”.
+
+This must be a premium business software demo, not a toy chatbot, not a generic landing page, and not a simple chat interface.
+
+SupportAI is a modern AI customer support platform for business websites.
+
+It allows companies to:
+- deploy an AI support assistant widget on their site
+- manage a support knowledge base
+- review conversations
+- monitor analytics
+- configure assistant behavior
+- handle escalation to human support
+- manage support automation in a controlled and trustworthy way
+
+This project must become the third major portfolio project and should clearly demonstrate:
+- modern AI product design
+- premium frontend execution
+- full-stack architecture
+- dashboard and admin flows
+- chat UI mechanics
+- business-focused interaction design
+- strong information architecture
+- realistic SaaS product behavior
+- future extensibility for real AI integrations
+
+==================================================
+PROJECT IDENTITY
+==================================================
+
+Project name:
+SupportAI
+
+Repository name:
+supportai-platform
+
+Product type:
+AI customer support platform / chatbot management system / support automation SaaS
+
+Primary business use case:
+A company installs an AI support assistant on its website. The assistant answers common questions using a curated knowledge base, suggests solutions, escalates difficult cases, and provides managers with analytics and conversation oversight.
+
+Portfolio purpose:
+Show that the developer can build:
+- AI product interfaces
+- dashboard systems
+- interactive chat mechanics
+- admin panels
+- settings architecture
+- conversation flows
+- analytics views
+- widget experiences
+- scalable SaaS foundations
+
+==================================================
+CORE PRODUCT GOAL
+==================================================
+
+The final result should feel like:
+a premium AI support SaaS platform that a real business could buy.
+
+It must look expensive, useful, polished, and trustworthy.
+
+Visitors should think:
+- this feels like a real product
+- this shows advanced frontend capability
+- this includes business logic, not just visuals
+- this demonstrates modern AI integration thinking
+- this is not a template
+
+==================================================
+MANDATORY STACK
+==================================================
+
+Use the following stack:
+
+Frontend:
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- React Hook Form
+- Zod
+- TanStack Table for admin tables where needed
+- lightweight charting solution such as Recharts
+- Zustand or a similarly minimal state solution where needed
+
+Backend:
+- Next.js route handlers and/or server actions
+- Prisma
+- PostgreSQL
+- Redis for caching / rate limiting / queue-ready architecture if useful
+- Auth.js / NextAuth or secure auth solution
+- role-based architecture
+- typed validation for all mutations
+
+AI architecture:
+- create a clear AI integration abstraction layer
+- support future OpenAI or other LLM provider integration
+- use mocked or simulated AI responses if needed
+- architect the project so real provider integration can be added cleanly later
+
+Optional:
+- Resend abstraction for notifications
+- background job placeholder
+- webhook-ready architecture
+- file upload placeholder for knowledge base assets
+
+Do NOT use:
+- a generic chatbot template
+- a fake UI-only implementation without product logic
+- bloated libraries
+- unstructured logic inside pages
+- gimmicky over-animation
+- dark cyberpunk neon style
+
+==================================================
+VISUAL STYLE DIRECTION
+==================================================
+
+IMPORTANT:
+Do NOT make this look like a dark neon hacker AI website.
+
+This must be a premium, elegant, business-class AI platform.
+
+Visual direction:
+- light theme
+- editorial SaaS
+- modern AI product
+- expensive but restrained
+- polished and calm
+- slightly futuristic but professional
+- warm and intelligent
+- layered and interactive
+- premium product design, not flashy design
+
+The site should feel like a cross between:
+- a modern support dashboard
+- a premium AI assistant platform
+- a trustworthy B2B SaaS product
+
+==================================================
+COLOR SYSTEM
+==================================================
+
+Use a refined premium light palette.
+
+Base:
+- App background: #F7F8FC
+- Panel background: #FFFFFF
+- Secondary surface: #F2F5FB
+- Soft tinted surface: #EEF4FF
+- Border: #DCE4F0
+- Headings: #182033
+- Body text: #526079
+- Muted text: #7D8AA3
+
+Primary accents:
+- Primary blue: #4D74FF
+- Deep blue: #3457E8
+- Soft blue: #DDE7FF
+
+Secondary accents:
+- Teal: #35C3B0
+- Soft teal: #DFF8F3
+- Violet: #8A7BFF
+- Soft violet: #EEE9FF
+- Amber: #F5B14C
+- Soft amber: #FFF2DA
+- Rose: #FF6F8A
+- Soft rose: #FFE5EC
+
+Optional gradient directions:
+- blue → violet
+- soft blue → teal
+- pale peach → rose
+- very subtle radial tint in hero and feature highlights
+
+Rules:
+- use color strategically
+- do not oversaturate the interface
+- keep most large surfaces neutral
+- use accent colors for meaning, hierarchy, and interaction
+
+==================================================
+DESIGN LANGUAGE
+==================================================
+
+The product must feel premium.
+
+Use:
+- large rounded cards
+- elegant shadows
+- subtle layered panels
+- soft gradients
+- rich but restrained cards
+- refined badges
+- polished tab systems
+- premium input fields
+- beautiful chat bubbles
+- excellent empty states
+- high-quality tables
+- elegant status pills
+- clean avatars / initials
+- soft focus rings
+- visually rich analytics blocks
+- tasteful motion
+
+Avoid:
+- cheap SaaS template feeling
+- sterile flat UI
+- childish illustrations
+- overloaded gradients
+- exaggerated animation
+- loud neon
+
+==================================================
+PRODUCT STRUCTURE
+==================================================
+
+The project must have two major areas:
+
+1. Public marketing/product shell
+2. Authenticated application area
+
+==================================================
+PUBLIC PAGES
+==================================================
+
+Create these public pages:
+
+1. Landing page
+2. Product page / Features page
+3. Solutions page
+4. Security page
+5. Demo page
+6. Login page
+7. Register page
+8. Optional pricing page
+9. Optional privacy page
+10. Optional terms page
+
+The public area must feel like a premium AI business software site.
+
+--------------------------------------------------
+LANDING PAGE SECTIONS
+--------------------------------------------------
+
+Build a high-end landing page with these sections:
+
+1. Header
+- logo
+- nav links
+- sign in
+- get demo button
+- sticky on scroll
+- polished mobile menu
+
+2. Hero
+- clear premium headline about AI customer support for modern businesses
+- concise business-focused subheadline
+- primary CTA: Start Demo
+- secondary CTA: View Platform
+- right side: layered product preview or live assistant visualization
+- subtle animated gradient background
+- cursor-responsive glow in hero background only, very subtle
+- floating message cards or support metrics chips
+
+3. Trust / outcomes section
+- support response speed
+- resolved conversations
+- handoff reduction
+- customer satisfaction proxy metrics
+- do not use fake famous brands
+
+4. Interactive assistant preview
+- show mini chat UI
+- allow user to click sample prompts
+- clicking prompt populates chat preview
+- preview should respond with simulated business-grade answers
+- include typing indicator animation
+
+5. Product capabilities grid
+- AI Assistant
+- Knowledge Base
+- Human Handoff
+- Conversation Review
+- Widget Customization
+- Analytics Dashboard
+- Team Inbox
+- Safe Guardrails
+
+6. Workflow section
+- train
+- deploy
+- assist
+- escalate
+- improve
+
+7. AI behavior / guardrails strip
+- safe topic boundaries
+- escalation logic
+- response consistency
+- business control over assistant tone
+
+8. Dashboard preview tabs
+- Dashboard
+- Conversations
+- Knowledge Base
+- Widget
+- Analytics
+Clicking tabs updates preview panel.
+
+9. Testimonials / role quotes
+- believable generic roles only
+
+10. Final CTA
+- Start Demo
+- Explore Dashboard
+
+==================================================
+DEMO PAGE
+==================================================
+
+This page is extremely important.
+
+It must be a premium interactive AI demo sandbox.
+
+Purpose:
+Allow visitors to interact with a simulated website assistant.
+
+Requirements:
+- central chat panel
+- sidebar with company scenario presets
+- sample prompts
+- response controls
+- reset conversation button
+
+Scenario presets:
+- SaaS company
+- construction business
+- dental clinic
+- e-commerce store
+- consulting agency
+
+Clicking a scenario preset should:
+- update the assistant context
+- change suggested prompts
+- update example knowledge base context
+- visually confirm current business mode
+
+Sample prompts:
+- What are your pricing plans?
+- Do you offer support on weekends?
+- How long does implementation take?
+- Can I talk to a human?
+- How do I request a quote?
+
+When a prompt is clicked:
+- insert it into the input field or send immediately
+- show user message bubble
+- show typing indicator
+- after short delay show AI response bubble
+- responses should be relevant to selected business mode
+
+Chat mechanics:
+- chat input should support typed message
+- send button
+- enter to send
+- message list scroll area
+- timestamps
+- assistant avatar
+- user avatar
+- typing animation
+- conversation reset
+- feedback buttons on assistant message: helpful / not helpful
+
+Click behavior:
+- clicking helpful highlights it and records local feedback state
+- clicking not helpful can reveal a small follow-up action such as “Escalate to human”
+- clicking “Escalate to human” shows a simulated status message like “Conversation marked for human follow-up”
+
+This page must feel alive and polished.
+
+==================================================
+AUTHENTICATED APPLICATION AREA
+==================================================
+
+Create a complete authenticated SaaS area.
+
+Main app sections:
+- Dashboard
+- Conversations
+- Knowledge Base
+- Widget
+- Analytics
+- Inbox / Escalations
+- Team
+- Settings
+
+Optional:
+- Experiments
+- Notifications
+- Integrations
+
+==================================================
+AUTH + USER SYSTEM
+==================================================
+
+Implement authentication with production-minded architecture.
+
+Requirements:
+- secure login
+- registration for demo users
+- protected routes
+- session handling
+- secure logout
+- role-based permissions
+- server-side auth checks
+- password hashing if applicable
+- CSRF-aware implementation
+- secure route protection
+- no sensitive data leaks
+
+Roles:
+- Admin
+- Support Manager
+- Support Agent
+
+Admin:
+- manage all settings
+- manage knowledge base
+- view all analytics
+- manage team
+- manage widget
+- review all escalations
+
+Support Manager:
+- review conversations
+- manage escalations
+- view analytics
+- update assistant behavior settings
+- manage team knowledge content in limited scope
+
+Support Agent:
+- view assigned escalations
+- review conversations
+- add internal notes
+- mark issue resolved
+
+==================================================
+MAIN DASHBOARD PAGE
+==================================================
+
+The dashboard should feel premium, intelligent, and useful.
+
+Include:
+
+1. KPI cards
+- Conversations Today
+- Resolution Rate
+- Escalations
+- Avg First Response Time
+- Deflection Rate
+- Satisfaction Score proxy
+
+Each card should include:
+- value
+- trend
+- comparison note
+- hover state
+- subtle animated counter
+- accent icon
+
+2. Conversation activity chart
+- daily conversation volume
+- resolved vs escalated
+
+3. Top knowledge topics
+- most-used help categories
+
+4. Escalation summary panel
+- awaiting human response
+- assigned
+- overdue
+- resolved
+
+5. AI performance panel
+- helpful feedback percentage
+- unresolved question rate
+- fallback answer rate
+- confidence band visualization
+
+6. Recent conversations feed
+- recent user questions
+- escalation flags
+- feedback indicators
+
+7. Widget performance mini panel
+- open rate
+- interaction rate
+- completion rate
+
+==================================================
+CONVERSATIONS PAGE
+==================================================
+
+This page is one of the most important.
+
+Build a premium conversation management page.
+
+Requirements:
+- searchable
+- filterable
+- sortable
+- paginated
+- row selection
+- status badges
+- channel/source indicator
+- feedback status
+- escalation state
+- assigned owner
+- date/time
+- customer label
+- topic label
+
+Filters:
+- resolved / unresolved
+- escalated
+- feedback rating
+- topic
+- assigned team member
+- date range
+- business scenario / workspace
+
+Table row click behavior:
+- clicking a row opens a conversation detail panel or full detail page
+
+Conversation detail view must include:
+- full message transcript
+- user messages
+- assistant responses
+- timestamps
+- internal notes
+- escalation status
+- feedback
+- topic classification
+- confidence indicator
+- suggested next actions
+
+Actions available:
+- assign to agent
+- mark resolved
+- escalate
+- add internal note
+- change topic
+- flag for review
+
+Click behavior rules:
+- clicking assign opens a small dropdown or modal
+- clicking mark resolved updates status pill immediately
+- clicking add internal note opens inline note form
+- clicking flag for review creates visible review badge
+- clicking escalate opens escalation panel with reason selector
+
+==================================================
+KNOWLEDGE BASE PAGE
+==================================================
+
+This page must feel like a real business knowledge management system.
+
+Features:
+- article list
+- searchable knowledge base
+- categories
+- last updated timestamp
+- status badges (published / draft)
+- source tags
+- owner / editor
+- usage count in AI responses
+
+Views:
+- list/table view
+- article editor view
+- category overview
+
+Each article should have:
+- title
+- summary
+- category
+- full content
+- tags
+- status
+- last updated
+- version note
+
+Actions:
+- create article
+- edit article
+- archive article
+- duplicate article
+- change category
+- publish/unpublish
+
+Click behavior:
+- clicking article opens editor panel or detail page
+- clicking duplicate creates a copied draft
+- clicking archive changes status and visually softens the row
+- clicking category filter updates list immediately
+- typing in search filters articles in real time
+
+Optional advanced mechanic:
+- “Test answer from this article” action
+Clicking it opens a mini test modal where a sample question is asked and the system shows how the assistant could answer using that knowledge.
+
+==================================================
+WIDGET PAGE
+==================================================
+
+This page is a major differentiator.
+
+Create a widget customization and preview page.
+
+Purpose:
+Let a business configure the support widget that appears on its website.
+
+Include:
+- live widget preview panel
+- customization controls
+- embed code preview
+- behavior settings
+- launcher style options
+
+Controls:
+- primary color
+- greeting message
+- widget title
+- launcher position
+- border radius style
+- avatar style
+- suggested prompt chips
+- business hours message
+- escalation button visibility
+
+Click behavior:
+- changing any control updates the live preview immediately
+- clicking color swatches changes widget color theme
+- changing greeting text updates header text in preview
+- toggling business hours message updates fallback state
+- switching launcher position moves preview widget
+- changing border radius adjusts live widget card styling
+
+Include:
+- code snippet panel
+- copy embed code button
+- copied state animation / confirmation
+
+The widget preview should:
+- open/close
+- animate smoothly
+- show welcome message
+- show prompt suggestions
+- allow sample mini interaction
+
+This page should be highly interactive and visually impressive.
+
+==================================================
+ANALYTICS PAGE
+==================================================
+
+Build a premium analytics page.
+
+Include:
+- conversation volume over time
+- resolution vs escalation chart
+- feedback score distribution
+- knowledge base usage chart
+- unanswered topics
+- agent response performance
+- widget engagement chart
+- deflection rate visualization
+
+Allow filters:
+- date range
+- business mode
+- topic
+- agent
+- widget version if useful
+
+Charts:
+- line chart
+- stacked bar
+- donut chart
+- trend cards
+- compact comparison cards
+
+Chart interactions:
+- hover tooltips
+- active legends
+- smooth transitions
+- professional empty/loading states
+
+==================================================
+INBOX / ESCALATIONS PAGE
+==================================================
+
+Create a page focused on conversations that need human attention.
+
+Features:
+- escalation queue
+- priority tags
+- assigned agent
+- SLA-like urgency indicator
+- overdue highlighting
+- quick actions
+
+Statuses:
+- New Escalation
+- Assigned
+- Waiting on Customer
+- Resolved
+
+Actions:
+- assign to team member
+- change priority
+- resolve
+- add note
+- open full conversation
+
+This page should feel operational and high-value.
+
+==================================================
+TEAM PAGE
+==================================================
+
+Show team members and AI oversight roles.
+
+Include:
+- user cards or compact table
+- role badge
+- assigned escalations
+- resolved cases
+- avg response time
+- recent activity snippet
+
+Optional:
+- performance sparkline
+- current availability badge
+
+==================================================
+SETTINGS PAGE
+==================================================
+
+Build a realistic settings area.
+
+Tabs:
+- Workspace
+- Assistant Behavior
+- Notifications
+- Security
+- Team Permissions
+- Integrations
+
+Workspace:
+- company name
+- support email
+- default language
+- timezone
+
+Assistant Behavior:
+- response style
+- tone preset
+- escalation threshold
+- restricted topics
+- confidence threshold
+- fallback message
+
+Notifications:
+- email notifications
+- escalation alerts
+- digest preferences
+
+Security:
+- active sessions
+- login event history placeholder
+- role overview
+- suspicious activity note
+- API key placeholder architecture if integrations added later
+
+Team Permissions:
+- role descriptions
+- assignment controls
+
+Integrations:
+- website embed
+- CRM integration placeholder
+- webhook placeholder
+- helpdesk export placeholder
+
+Click behavior:
+- toggles update immediately or show save state
+- save button should have loading and success feedback
+- tab switching preserves form state where appropriate
+
+==================================================
+CHAT UI BEHAVIOR SPECIFICATION
+==================================================
+
+The chat interfaces must feel premium and realistic.
+
+Chat visual requirements:
+- assistant bubble distinct from user bubble
+- soft shadows
+- elegant rounded corners
+- readable typography
+- timestamp display
+- typing indicator with animated dots
+- smooth scroll behavior
+- subtle bubble entry animation
+- polite spacing between messages
+
+Chat interactions:
+- sending message inserts user bubble immediately
+- input clears on send
+- assistant typing indicator appears
+- assistant response fades/slides in
+- message area scrolls to latest
+- pressing enter sends message
+- shift+enter creates newline if multiline input is enabled
+
+Assistant messages may include:
+- plain text
+- bullet style support info
+- suggested next prompt chips
+- escalation CTA button when needed
+
+Click behavior for suggested prompt chips:
+- clicking chip inserts/sends prompt
+- chip gets active pressed feedback
+- conversation updates smoothly
+
+==================================================
+INTERACTIVE UI SPECIFICATION
+==================================================
+
+This project must feel interactive in a business-premium way.
+
+Add interactions such as:
+- hover lift on cards
+- soft border glow on interactive panels
+- refined focus rings on inputs
+- smooth tab transitions
+- row hover reveals on tables
+- slide-over panels
+- polished modal transitions
+- chart hover feedback
+- widget live update interactions
+- subtle hero pointer-reactive ambient light
+- dashboard cards with animated counters
+- knowledge base real-time search feedback
+
+Do not overdo interaction.
+It must remain elegant and professional.
+
+==================================================
+MICRO-ANIMATION RULES
+==================================================
+
+Allowed animation styles:
+- 150ms to 300ms UI transitions
+- soft fade-ins
+- light upward motion for cards
+- subtle shadow deepening on hover
+- smooth panel slide transitions
+- animated typing dots
+- chart value transitions
+- widget open/close spring-like smoothness
+
+Avoid:
+- large bouncy animations
+- excessive motion everywhere
+- flashy AI gimmicks
+- spinning objects
+- glowing neon overload
+
+==================================================
+SECURITY REQUIREMENTS
+==================================================
+
+This must be built with production-aware security architecture.
+
+Requirements:
+- server-side validation for all mutations
+- Zod validation schemas
+- authentication on protected routes
+- role-based authorization
+- workspace-level data separation
+- no trust in client-submitted privileged fields
+- sanitized text input
+- safe error messages
+- no secrets exposed to client
+- secure env handling
+- parameterized queries via Prisma
+- rate limiting architecture for login and important write operations
+- anti-abuse thinking for chat submissions
+- pagination safeguards
+- minimal API response exposure
+- XSS-safe rendering
+- no dangerous HTML rendering
+- audit logging for sensitive actions
+- secure session handling
+- future-ready webhook verification placeholder if integrations added later
+
+Also document future improvements:
+- stronger anomaly detection
+- abuse monitoring
+- moderation layer for user input
+- provider-side safety integration
+- conversation retention policy
+- encryption of selected sensitive fields if needed
+- Sentry / error monitoring
+- suspicious login alerts
+
+==================================================
+ANTI-ABUSE / GUARDRAILS
+==================================================
+
+Since this is an AI support platform, include architecture for:
+- prompt / input validation
+- topic restriction logic
+- fallback response behavior
+- escalation to human when confidence is low
+- rate limiting for chat interactions
+- repeated prompt abuse safeguards placeholder
+- content moderation hook placeholder
+- unsafe topic rejection flow placeholder
+- audit log for assistant behavior changes
+
+UI should make clear that the assistant is controlled by business rules.
+
+==================================================
+DOMAIN MODELS
+==================================================
+
+Design a thoughtful Prisma schema.
+
+Core models:
+- User
+- Workspace
+- Membership
+- Conversation
+- Message
+- ConversationFeedback
+- Escalation
+- KnowledgeArticle
+- KnowledgeCategory
+- WidgetConfig
+- AssistantSettings
+- TeamNote
+- Notification
+- AuditLog
+- Session / Account / Verification models as needed
+- Optional PromptPreset
+- Optional ConversationTag
+
+Schema expectations:
+- timestamps
+- workspace scoping
+- clear relations
+- indexes for common queries
+- enums for statuses and roles
+- future extensibility
+
+==================================================
+BACKEND DOMAIN LOGIC
+==================================================
+
+Implement clear service boundaries.
+
+Services should cover:
+- auth
+- conversations
+- knowledge base
+- widget configuration
+- analytics aggregation
+- escalation workflows
+- assistant settings
+- notifications
+- audit logging
+
+Business logic examples:
+- every escalation creates audit activity
+- helpful / not helpful feedback updates conversation metrics
+- unresolved conversations affect dashboard stats
+- widget settings update preview state
+- knowledge article usage counts affect analytics
+- low confidence responses suggest escalation
+- role permissions gate sensitive settings changes
+
+==================================================
+PUBLIC DEMO / MOCK AI STRATEGY
+==================================================
+
+If real LLM integration is not fully implemented, still architect the system correctly.
+
+Use:
+- simulated AI service layer
+- scenario-aware response generation
+- knowledge-based response mapping
+- fallback logic
+- confidence indicator simulation
+
+The important part is:
+the product must feel real and be architected for future AI provider integration.
+
+Do not hardcode everything directly in UI components.
+
+==================================================
+RESPONSIVE DESIGN
+==================================================
+
+Must be fully responsive.
+
+Desktop:
+- premium dashboard layout
+- side navigation
+- multi-column analytics
+- large chat panels
+
+Tablet:
+- clean stacking
+- preserved hierarchy
+- usable widget controls
+
+Mobile:
+- support chat should feel app-like
+- tables adapt gracefully
+- slide-over panels work properly
+- navigation remains polished
+- widget preview still works
+- filters and tabs remain usable
+
+==================================================
+ACCESSIBILITY
+==================================================
+
+Requirements:
+- semantic structure
+- keyboard accessibility
+- visible focus states
+- color contrast
+- accessible tables
+- accessible modals
+- accessible form controls
+- aria labels where needed
+- reduced motion respect
+
+==================================================
+PROJECT FILE / FOLDER STRUCTURE
+==================================================
+
+Use a scalable SaaS-grade structure.
+
+/
+  public/
+    images/
+    icons/
+    og/
+  prisma/
+    schema.prisma
+    seed.ts
+  src/
+    app/
+      (marketing)/
+        page.tsx
+        product/page.tsx
+        solutions/page.tsx
+        security/page.tsx
+        demo/page.tsx
+      (auth)/
+        login/page.tsx
+        register/page.tsx
+      (dashboard)/
+        layout.tsx
+        dashboard/page.tsx
+        conversations/page.tsx
+        conversations/[id]/page.tsx
+        knowledge-base/page.tsx
+        widget/page.tsx
+        analytics/page.tsx
+        inbox/page.tsx
+        team/page.tsx
+        settings/page.tsx
+      api/
+        ...
+    components/
+      marketing/
+      dashboard/
+      chat/
+      widget/
+      analytics/
+      tables/
+      forms/
+      layout/
+      common/
+      modals/
+    lib/
+      auth/
+      db/
+      permissions/
+      validation/
+      ai/
+      services/
+        conversations/
+        knowledge/
+        analytics/
+        widget/
+        escalations/
+        settings/
+      repositories/
+      rate-limit/
+      security/
+      utils/
+    server/
+      actions/
+      queries/
+      mutations/
+    hooks/
+    store/
+    types/
+    constants/
+    data/
+    config/
+    styles/
+  middleware.ts
+  package.json
+  tsconfig.json
+  README.md
+  .env.example
+
+Architecture principles:
+- separate UI from business logic
+- separate validation from data access
+- separate AI orchestration from presentation
+- separate permissions from services
+- use reusable typed components
+- keep future real provider integration possible
+
+==================================================
+SEED DATA
+==================================================
+
+Provide rich seed data.
+
+Include:
+- multiple team members
+- multiple conversations
+- resolved and escalated conversations
+- knowledge articles in several categories
+- widget configurations
+- assistant settings
+- analytics-friendly data
+- sample feedback records
+- scenario presets
+- prompt presets
+
+The app should feel alive immediately after seeding.
+
+==================================================
+README REQUIREMENTS
+==================================================
+
+Generate a strong README including:
+- project overview
+- product concept
+- core features
+- stack
+- AI architecture summary
+- folder structure
+- auth and security notes
+- knowledge base and widget features
+- demo page explanation
+- local setup
+- environment variables
+- seed instructions
+- future roadmap
+- deployment notes
+
+==================================================
+FINAL UX GOAL
+==================================================
+
+When a visitor opens this project, they should think:
+
+“This looks like a real AI support product for businesses.”
+
+When they click through it, they should feel:
+- it is interactive
+- it responds intelligently
+- it has real product depth
+- it demonstrates business-grade frontend and backend capability
+- it is polished and expensive-feeling
+- it is clearly more than a simple chatbot demo
+
+Always optimize for:
+- premium business UX
+- realistic SaaS product feel
+- modern AI product clarity
+- strong full-stack architecture
+- elegant interaction design
+- future extensibility
+- trustworthy visual language
