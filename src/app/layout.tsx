@@ -18,7 +18,12 @@ const monoFont = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "SupportAI | AI Customer Support Platform",
   description:
-    "SupportAI is a production-minded AI customer support platform with conversation oversight, knowledge management, and analytics."
+    "SupportAI is a production-minded AI customer support platform with conversation oversight, knowledge management, and analytics.",
+  icons: {
+    icon: [{ url: "/favicon.svg?v=2", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg?v=2",
+    apple: "/favicon.svg?v=2"
+  }
 };
 
 export default function RootLayout({

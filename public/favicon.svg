@@ -1,0 +1,19 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="supportai-bg" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="supportai-accent" x1="22" y1="20" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D9E7FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="52" height="52" rx="16" fill="url(#supportai-bg)"/>
+  <path d="M21 24.5C21 19.8056 24.8056 16 29.5 16H34.5C39.1944 16 43 19.8056 43 24.5V26C43 29.7479 40.572 32.9288 37.2041 34.0606L36.25 37.25C35.9418 38.2807 34.6954 38.589 33.9595 37.807L30.5298 34.1642H29.5C24.8056 34.1642 21 30.3586 21 25.6642V24.5Z" fill="url(#supportai-accent)"/>
+  <circle cx="28" cy="25.5" r="2" fill="#5B5AEF"/>
+  <circle cx="36" cy="25.5" r="2" fill="#5B5AEF"/>
+  <path d="M27.5 30.5C28.7708 31.8333 30.2708 32.5 32 32.5C33.7292 32.5 35.2292 31.8333 36.5 30.5" stroke="#5B5AEF" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M45 18L46.293 20.707L49 22L46.293 23.293L45 26L43.707 23.293L41 22L43.707 20.707L45 18Z" fill="#A5B4FC"/>
+  <path d="M18 38L19.147 40.353L21.5 41.5L19.147 42.647L18 45L16.853 42.647L14.5 41.5L16.853 40.353L18 38Z" fill="#C4B5FD"/>
+</svg>
