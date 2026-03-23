@@ -3,29 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --color-app: #F6F8FC;
-  --color-panel: #FFFFFF;
-  --color-surface: #F3F6FF;
-  --color-tinted: #EEF3FF;
-  --color-border: #E2E8F4;
-  --color-heading: #111827;
-  --color-body: #1F2937;
-  --color-muted: #6B7280;
-  --color-primary: #5B7CFF;
-  --color-primary-deep: #4867E8;
-  --color-primary-soft: #E7EDFF;
-  --color-teal: #4FD1C5;
-  --color-teal-soft: #E6FBF8;
-  --color-violet: #7C6CFF;
-  --color-violet-soft: #F0EDFF;
-  --color-amber: #F5B14C;
-  --color-amber-soft: #FFF4E1;
-  --color-rose: #F472B6;
-  --color-rose-soft: #FDE7F3;
+  --color-app: #f7f8fd;
+  --color-panel: #ffffff;
+  --color-surface: #eef2ff;
+  --color-tinted: #f2f5ff;
+  --color-border: #e2e8f6;
+  --color-heading: #172033;
+  --color-body: #56617a;
+  --color-muted: #74819a;
+  --color-primary: #5f73ff;
+  --color-primary-deep: #495edc;
+  --color-primary-soft: #e8ecff;
+  --color-teal: #31bfae;
+  --color-teal-soft: #eafbf8;
+  --color-violet: #8b78ff;
+  --color-violet-soft: #f0ecff;
+  --color-amber: #f0b24e;
+  --color-amber-soft: #fff5e4;
+  --color-rose: #ec7db1;
+  --color-rose-soft: #fdebf4;
 }
 
 * {
   border-color: var(--color-border);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 138, 163, 0.4) transparent;
 }
 
 html,
@@ -33,13 +35,18 @@ body {
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: radial-gradient(circle at 4% 8%, rgba(91, 124, 255, 0.1), transparent 30%),
-    radial-gradient(circle at 88% 18%, rgba(124, 108, 255, 0.08), transparent 24%),
-    radial-gradient(circle at 50% 100%, rgba(79, 209, 197, 0.06), transparent 32%),
+  background: radial-gradient(circle at 12% 14%, rgba(95, 115, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 86% 10%, rgba(139, 120, 255, 0.11), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(49, 191, 174, 0.08), transparent 32%),
     var(--color-app);
   color: var(--color-body);
   font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   transition: opacity 220ms ease;
@@ -52,7 +59,13 @@ h4,
 h5,
 h6 {
   color: var(--color-heading);
-  font-family: var(--font-heading), sans-serif;
+  font-family: var(--font-body), sans-serif;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 a {
@@ -61,16 +74,11 @@ a {
 }
 
 ::selection {
-  background: rgba(91, 124, 255, 0.24);
+  background: rgba(95, 115, 255, 0.24);
 }
 
 body.route-pending {
   opacity: 0.92;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(125, 138, 163, 0.4) transparent;
 }
 
 *::-webkit-scrollbar {
@@ -117,11 +125,11 @@ body.route-pending {
   }
 
   .section-block {
-    @apply py-16;
+    @apply py-20 md:py-28;
   }
 
   .section-header {
-    @apply mb-7 space-y-2;
+    @apply mb-8 space-y-3;
   }
 
   .landing-grid {
@@ -131,7 +139,7 @@ body.route-pending {
   }
 
   .glass-panel {
-    @apply rounded-3xl border border-border bg-white/85 shadow-panel backdrop-blur-xl;
+    @apply rounded-[1.75rem] border border-white/60 bg-white/75 shadow-panel backdrop-blur-xl;
   }
 
   .bento-card {
@@ -151,11 +159,15 @@ body.route-pending {
   }
 
   .surface-card {
-    @apply rounded-2xl border border-border bg-panel shadow-panel;
+    @apply rounded-[1.5rem] border border-white/60 bg-white/90 shadow-panel backdrop-blur-xl;
+  }
+
+  .card-elevated {
+    @apply surface-card motion-surface hover:-translate-y-0.5 hover:shadow-lift;
   }
 
   .interactive-card {
-    @apply surface-card motion-surface transform-gpu hover:-translate-y-0.5 hover:border-primary hover:shadow-lift;
+    @apply card-elevated transform-gpu hover:border-primary;
   }
 
   .panel-tint {
@@ -163,7 +175,7 @@ body.route-pending {
   }
 
   .input-surface {
-    @apply rounded-xl border border-border bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.9)];
+    @apply rounded-xl border border-border bg-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)];
   }
 
   .focus-ring {
@@ -171,7 +183,7 @@ body.route-pending {
   }
 
   .focus-ring:focus-visible {
-    --tw-ring-color: rgba(91, 124, 255, 0.24);
+    --tw-ring-color: rgba(95, 115, 255, 0.24);
   }
 
   .status-pill {
@@ -210,11 +222,35 @@ body.route-pending {
 
   .chat-bubble-user {
     @apply rounded-2xl rounded-br-md border bg-gradient-to-b from-primary to-primaryDeep px-3.5 py-2.5 text-sm text-white shadow-soft motion-surface;
-    border-color: rgba(72, 103, 232, 0.32);
+    border-color: rgba(73, 94, 220, 0.28);
   }
 
   .chat-bubble-assistant {
     @apply rounded-2xl rounded-bl-md border border-border bg-panel px-3.5 py-2.5 text-sm text-body shadow-soft motion-surface;
+  }
+}
+
+@layer utilities {
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--color-primary), var(--color-violet));
+  }
+
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--color-primary), var(--color-teal));
+  }
+
+  .bg-gradient-hero {
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232, 236, 255, 0.92) 0%, rgba(247, 248, 253, 0) 72%);
+  }
+
+  .bg-gradient-cta {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-deep));
+  }
+
+  .font-mono-code {
+    font-family: var(--font-mono), monospace;
   }
 }
 

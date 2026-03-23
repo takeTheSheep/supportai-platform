@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { hashPassword } from "@/lib/auth/password";
 import { registerSchema } from "@/lib/validation/auth";
+import { demoAuth } from "@/lib/auth/demo-auth";
+
+const usePrismaAuth = process.env.USE_PRISMA_AUTH === "true";
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,6 +15,27 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         { error: "Invalid registration payload", details: parsed.error.flatten() },
         { status: 422 }
+      );
+    }
+
+    if (!usePrismaAuth) {
+      const existing = demoAuth.getUserByEmail(parsed.data.email);
+      if (existing) {
+        return NextResponse.json({ error: "Email already registered" }, { status: 409 });
+      }
+
+      const user = await demoAuth.registerUser(parsed.data);
+      return NextResponse.json(
+        {
+          user: user
+            ? {
+                id: user.id,
+                name: user.name,
+                email: user.email
+              }
+            : null
+        },
+        { status: 201 }
       );
     }
 

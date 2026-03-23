@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Manrope, Sora } from "next/font/google";
+import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import { Providers } from "@/components/common/providers";
 import "./globals.css";
 
-const bodyFont = Manrope({
+const bodyFont = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap"
 });
 
-const headingFont = Sora({
-  variable: "--font-heading",
+const monoFont = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   display: "swap"
 });
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${headingFont.variable}`}>
+      <body className={`${bodyFont.variable} ${monoFont.variable}`}>
         <Providers>{children}</Providers>
       </body>
     </html>

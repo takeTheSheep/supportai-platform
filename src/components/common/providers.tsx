@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { SessionProvider } from "next-auth/react";
 import { PropsWithChildren } from "react";
 
 export const Providers = ({ children }: PropsWithChildren) => {
@@ -14,6 +13,6 @@ export const Providers = ({ children }: PropsWithChildren) => {
     }
   }, [pathname]);
 
-  return <SessionProvider>{children}</SessionProvider>;
+  return children;
 };
 

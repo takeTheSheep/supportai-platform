@@ -1,25 +1,19 @@
-import { AssistantPreviewSection } from "@/components/marketing/assistant-preview-section";
-import { CapabilitiesGridSection } from "@/components/marketing/capabilities-grid-section";
-import { DashboardPreviewTabsSection } from "@/components/marketing/dashboard-preview-tabs-section";
-import { FinalCTASection } from "@/components/marketing/final-cta-section";
-import { GuardrailsStrip } from "@/components/marketing/guardrails-strip";
-import { HeroSection } from "@/components/marketing/hero-section";
-import { TestimonialsSection } from "@/components/marketing/testimonials-section";
-import { TrustOutcomesSection } from "@/components/marketing/trust-outcomes-section";
-import { WorkflowSection } from "@/components/marketing/workflow-section";
+import { ReferenceLandingChatPreviewSection } from "@/components/marketing/reference-landing-chat-preview-section";
+import { ReferenceLandingCtaSection } from "@/components/marketing/reference-landing-cta-section";
+import { ReferenceLandingFeaturesSection } from "@/components/marketing/reference-landing-features-section";
+import { ReferenceLandingHero } from "@/components/marketing/reference-landing-hero";
+import { ReferenceLandingTrustMetricsSection } from "@/components/marketing/reference-landing-trust-metrics-section";
+import { ReferenceLandingWorkflowSection } from "@/components/marketing/reference-landing-workflow-section";
 
 export default function LandingPage() {
   return (
     <>
-      <HeroSection />
-      <TrustOutcomesSection />
-      <AssistantPreviewSection />
-      <CapabilitiesGridSection />
-      <WorkflowSection />
-      <GuardrailsStrip />
-      <DashboardPreviewTabsSection />
-      <TestimonialsSection />
-      <FinalCTASection />
+      <ReferenceLandingHero />
+      <ReferenceLandingTrustMetricsSection />
+      <ReferenceLandingChatPreviewSection />
+      <ReferenceLandingFeaturesSection />
+      <ReferenceLandingWorkflowSection />
+      <ReferenceLandingCtaSection />
     </>
   );
 }

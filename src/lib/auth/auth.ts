@@ -4,10 +4,14 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/db/prisma";
 import { loginSchema } from "@/lib/validation/auth";
 import { verifyPassword } from "@/lib/auth/password";
+import { demoAuth } from "@/lib/auth/demo-auth";
+
+const usePrismaAuth = process.env.USE_PRISMA_AUTH === "true";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(prisma),
+  adapter: usePrismaAuth ? PrismaAdapter(prisma) : undefined,
   secret: process.env.NEXTAUTH_SECRET ?? "supportai-local-dev-secret",
+  trustHost: process.env.AUTH_TRUST_HOST === "true" || process.env.NODE_ENV !== "production",
   session: {
     strategy: "jwt"
   },
@@ -27,17 +31,41 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        const user = await prisma.user.findUnique({
-          where: { email: parsed.data.email },
-          include: {
-            memberships: {
-              include: { workspace: true },
-              orderBy: { createdAt: "asc" }
+        if (usePrismaAuth) {
+          const user = await prisma.user.findUnique({
+            where: { email: parsed.data.email },
+            include: {
+              memberships: {
+                include: { workspace: true },
+                orderBy: { createdAt: "asc" }
+              }
             }
-          }
-        });
+          });
 
-        if (!user || !user.passwordHash) {
+          if (!user || !user.passwordHash) {
+            return null;
+          }
+
+          const valid = await verifyPassword(parsed.data.password, user.passwordHash);
+          if (!valid) {
+            return null;
+          }
+
+          const membership = user.memberships[0];
+
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            image: user.image,
+            role: membership?.role ?? "SUPPORT_AGENT",
+            workspaceId: membership?.workspaceId ?? null,
+            workspaceSlug: membership?.workspace.slug ?? null
+          };
+        }
+
+        const user = demoAuth.getUserByEmail(parsed.data.email);
+        if (!user) {
           return null;
         }
 
@@ -46,16 +74,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        const membership = user.memberships[0];
-
         return {
           id: user.id,
           email: user.email,
           name: user.name,
           image: user.image,
-          role: membership?.role ?? "SUPPORT_AGENT",
-          workspaceId: membership?.workspaceId ?? null,
-          workspaceSlug: membership?.workspace.slug ?? null
+          role: user.role,
+          workspaceId: user.workspaceId,
+          workspaceSlug: user.workspaceSlug
         };
       }
     })
@@ -69,7 +95,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.workspaceSlug = user.workspaceSlug ?? null;
       }
 
-      if ((!token.role || !token.workspaceId) && token.sub) {
+      if (usePrismaAuth && (!token.role || !token.workspaceId) && token.sub) {
         const membership = await prisma.membership.findFirst({
           where: { userId: token.sub },
           include: { workspace: true },
@@ -81,6 +107,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.workspaceId = membership?.workspaceId ?? null;
         token.workspaceSlug = membership?.workspace.slug ?? null;
       }
+
+      token.role =
+        (token.role as "ADMIN" | "SUPPORT_MANAGER" | "SUPPORT_AGENT" | undefined) ??
+        "SUPPORT_AGENT";
+      token.workspaceId = (token.workspaceId as string | null | undefined) ?? null;
+      token.workspaceSlug = (token.workspaceSlug as string | null | undefined) ?? null;
 
       return token;
     },

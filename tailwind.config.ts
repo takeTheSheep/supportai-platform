@@ -26,11 +26,11 @@ const config: Config = {
         roseSoft: "var(--color-rose-soft)"
       },
       boxShadow: {
-        soft: "0 8px 28px rgba(24, 32, 51, 0.08)",
-        lift: "0 18px 38px rgba(24, 32, 51, 0.14)",
-        float: "0 26px 54px rgba(24, 32, 51, 0.14)",
-        focus: "0 0 0 3px rgba(77, 116, 255, 0.24)",
-        panel: "0 1px 0 rgba(220, 228, 240, 0.7), 0 16px 48px rgba(24, 32, 51, 0.09)"
+        soft: "0 10px 28px rgba(23, 32, 51, 0.08)",
+        lift: "0 22px 48px rgba(23, 32, 51, 0.14)",
+        float: "0 28px 58px rgba(23, 32, 51, 0.14)",
+        focus: "0 0 0 3px rgba(95, 115, 255, 0.24)",
+        panel: "0 1px 3px rgba(23, 32, 51, 0.04), 0 18px 44px rgba(23, 32, 51, 0.09)"
       },
       borderRadius: {
         xl2: "1.25rem"
@@ -52,6 +52,10 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(-8px)" },
           "100%": { opacity: "1", transform: "translateX(0)" }
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" }
+        },
         pulseDot: {
           "0%, 80%, 100%": { opacity: "0.2", transform: "translateY(0)" },
           "40%": { opacity: "1", transform: "translateY(-1px)" }
@@ -71,6 +75,7 @@ const config: Config = {
         "fade-in": "fade-in 200ms ease-out",
         "slide-left": "slide-left 230ms ease-out",
         "slide-right": "slide-right 230ms ease-out",
+        float: "float 6s ease-in-out infinite",
         "pulse-dot": "pulseDot 1.2s ease-in-out infinite",
         "pulse-soft": "pulse-soft 1.4s ease-in-out infinite",
         shimmer: "shimmer 1.6s linear infinite"
